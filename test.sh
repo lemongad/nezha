@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ash
 # 哪吒的三个参数
 read -ep "域名: " NEZHA_SERVER &&
 read -ep "端口: " NEZHA_PORT &&
