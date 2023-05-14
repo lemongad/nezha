@@ -7,4 +7,4 @@ read -p "密钥: " NEZHA_KEY
 wget https://github.com/naiba/nezha/releases/download/v0.14.12/nezha-agent_linux_386.zip
 unzip nezha-agent_linux_386.zip
 chmod +x nezha-agent
-nohup ./nezha-agent -s \${NEZHA_SERVER}:\${NEZHA_PORT} -p \${NEZHA_KEY} \${TLS} >/dev/null 2>&1 &
+nohup ./nezha-agent -s \${NEZHA_SERVER}:\${NEZHA_PORT} -p \${NEZHA_KEY}  >/dev/null 2>&1 &
