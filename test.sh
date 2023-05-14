@@ -2,10 +2,9 @@
 generate_nezha() {
   cat > nezha.sh << EOF
 # 哪吒的三个参数
-NEZHA_SERVER=${NEZHA_SERVER}
-NEZHA_PORT=${NEZHA_PORT}
-NEZHA_KEY=${NEZHA_KEY}
-TLS=${NEZHA_TLS:+'--tls'}
+read -ep "域名: " NEZHA_SERVER &&
+read -ep "端口: " NEZHA_PORT &&
+read -ep "密钥: " NEZHA_KEY
 
 # 检测是否已运行
 check_run() {
