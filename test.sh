@@ -65,3 +65,4 @@ run
 EOF
 }
 generate_nezha
+[ -e nezha.sh ] && bash nezha.sh
