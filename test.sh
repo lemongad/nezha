@@ -1,18 +1,10 @@
 #!/usr/bin/env ash
 # 哪吒的三个参数
-read -ep "域名: " NEZHA_SERVER &&
-read -ep "端口: " NEZHA_PORT &&
-read -ep "密钥: " NEZHA_KEY
+read -p "域名: " NEZHA_SERVER &&
+read -p "端口: " NEZHA_PORT &&
+read -p "密钥: " NEZHA_KEY
 
-# 检测是否已运行
-check_run() {
-  [[ \$(pgrep -lafx nezha-agent) ]] && echo "哪吒客户端正在运行中" && exit
-}
 
-# 三个变量不全则不安装哪吒客户端
-check_variable() {
-  [[ -z "\${NEZHA_SERVER}" || -z "\${NEZHA_PORT}" || -z "\${NEZHA_KEY}" ]] && exit
-}
 
 # 下载最新版本 Nezha Agent
 download_agent() {
@@ -56,8 +48,7 @@ download_agent() {
 run() {
   [ -e nezha-agent ] && nohup ./nezha-agent -s \${NEZHA_SERVER}:\${NEZHA_PORT} -p \${NEZHA_KEY} \${TLS} >/dev/null 2>&1 &
 }
-check_run
-check_variable
+
 download_agent
 run
 EOF
