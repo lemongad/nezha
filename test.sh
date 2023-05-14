@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-generate_nezha() {
-  cat > nezha.sh << EOF
 # 哪吒的三个参数
 read -ep "域名: " NEZHA_SERVER &&
 read -ep "端口: " NEZHA_PORT &&
@@ -64,5 +62,3 @@ download_agent
 run
 EOF
 }
-generate_nezha
-[ -e nezha.sh ] && bash nezha.sh
